@@ -221,7 +221,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo positioned to the left corner */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -247,7 +247,7 @@ export const Navbar = () => {
                       onMouseEnter={() => setIsServicesOpen(true)}
                       onMouseLeave={() => setIsServicesOpen(false)}
                     >
-                      <button className="text-white hover:text-accent transition-colors duration-200 flex items-center gap-1">
+                      <button className="text-white hover:text-accent transition-colors duration-200 flex items-center gap-1 text-lg lg:text-xl">
                         {item.name}
                         <ChevronDown
                           className={`w-4 h-4 transition-transform duration-200 ${
@@ -287,7 +287,7 @@ export const Navbar = () => {
                       to={item.href}
                       className={`text-white hover:text-accent transition-colors duration-200 ${
                         location.pathname === item.href ? "text-accent" : ""
-                      }`}
+                      } text-lg lg:text-xl`}
                     >
                       {item.name}
                     </Link>
@@ -300,7 +300,7 @@ export const Navbar = () => {
           <div className="hidden md:flex flex-shrink-0">
             <Button
               onClick={handleWhatsApp}
-              className="bg-accent hover:bg-accent/90 text-white px-4 lg:px-6 py-2 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow text-sm lg:text-base"
+              className="bg-accent hover:bg-accent/90 text-white px-4 lg:px-6 py-2 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow text-lg lg:text-xl"
             >
               Get Started
             </Button>
