@@ -1,44 +1,52 @@
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 const navigation = {
   services: [
-    { name: 'Web Development', href: '/services/web-development' },
-    { name: 'Mobile Apps', href: '/services/mobile-apps' },
-    { name: 'UI/UX Design', href: '/services/ui-ux' },
-    { name: 'Maintenance', href: '/services/maintenance' },
+    { name: "Web Development", href: "/services/web-development" },
+    { name: "Mobile Apps", href: "/services/mobile-apps" },
+    { name: "UI/UX Design", href: "/services/ui-ux" },
+    { name: "Maintenance", href: "/services/maintenance" },
   ],
   company: [
-    { name: 'About', href: '/about' },
-    { name: 'Work', href: '/work' },
-    { name: 'Process', href: '/process' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' },
+    { name: "About", href: "/about" },
+    { name: "Work", href: "/work" },
+    { name: "Process", href: "/process" },
+    { name: "Blog", href: "/blog" },
+    { name: "Careers", href: "/careers" },
   ],
   support: [
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Support', href: '/support' },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Contact", href: "/contact" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Support", href: "/support" },
   ],
   legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Cookie Policy", href: "/cookies" },
   ],
 };
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: '#' },
-  { name: 'Twitter', icon: Twitter, href: '#' },
-  { name: 'LinkedIn', icon: Linkedin, href: '#' },
-  { name: 'Instagram', icon: Instagram, href: '#' },
+  { name: "Facebook", icon: Facebook, href: "#" },
+  { name: "Twitter", icon: Twitter, href: "#" },
+  { name: "LinkedIn", icon: Linkedin, href: "#" },
+  { name: "Instagram", icon: Instagram, href: "#" },
 ];
 
 export const Footer = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/919693759948', '_blank');
+    window.open("https://wa.me/919693759948", "_blank");
   };
 
   return (
@@ -51,9 +59,11 @@ export const Footer = () => {
             <div className="lg:col-span-2">
               <div className="text-2xl font-bold mb-4">Tanzible</div>
               <p className="text-white/80 mb-6 max-w-md">
-                Premium AI-forward software services studio specializing in robust web and mobile app development. We help businesses launch faster and scale reliably.
+                Premium AI-forward software services studio specializing in
+                robust web and mobile app development. We help businesses launch
+                faster and scale reliably.
               </p>
-              
+
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center gap-3">
@@ -155,7 +165,7 @@ export const Footer = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="border-t border-white/20 py-12">
+        {/* <div className="border-t border-white/20 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-xl font-semibold mb-2">Stay Updated</h3>
@@ -174,7 +184,7 @@ export const Footer = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Footer */}
         <div className="border-t border-white/20 py-8">

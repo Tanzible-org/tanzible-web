@@ -5,6 +5,14 @@
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
 
 @layer base {
   :root {
@@ -42,7 +50,7 @@ All colors MUST be HSL.
     /* Glassmorphism */
     --glass-bg: 0 0% 100% / 0.1;
     --glass-border: 0 0% 100% / 0.2;
-    
+
     /* Glow Effects */
     --glow-primary: 208 43% 28% / 0.3;
     --glow-secondary: 207 24% 52% / 0.3;
@@ -115,7 +123,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-feature-settings: "cv11", "ss01";
     font-variation-settings: "opsz" 32;
   }
