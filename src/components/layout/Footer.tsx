@@ -44,7 +44,11 @@ const socialLinks = [
   { name: "Instagram", icon: Instagram, href: "#" },
 ];
 
-export const Footer = () => {
+type FooterProps = {
+  isHome?: boolean;
+};
+
+export const Footer = ({ isHome = false }: FooterProps) => {
   const handleWhatsApp = () => {
     window.open("https://wa.me/919693759948", "_blank");
   };

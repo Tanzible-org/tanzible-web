@@ -26,24 +26,113 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/web-development" element={<WebDevelopment />} />
-            <Route path="/services/mobile-apps" element={<MobileApps />} />
-            <Route path="/services/ui-ux" element={<UIUXDesign />} />
-            <Route path="/services/maintenance" element={<Maintenance />} />
-            <Route path="/work" element={<Work />} />
-            <Route path="/process" element={<Process />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout isHome>
+                <Index />
+              </Layout>
+            }
+          />
+          <Route
+            path="/services"
+            element={
+              <Layout>
+                <Services />
+              </Layout>
+            }
+          />
+          <Route
+            path="/services/web-development"
+            element={
+              <Layout>
+                <WebDevelopment />
+              </Layout>
+            }
+          />
+          <Route
+            path="/services/mobile-apps"
+            element={
+              <Layout>
+                <MobileApps />
+              </Layout>
+            }
+          />
+          <Route
+            path="/services/ui-ux"
+            element={
+              <Layout>
+                <UIUXDesign />
+              </Layout>
+            }
+          />
+          <Route
+            path="/services/maintenance"
+            element={
+              <Layout>
+                <Maintenance />
+              </Layout>
+            }
+          />
+          <Route
+            path="/work"
+            element={
+              <Layout>
+                <Work />
+              </Layout>
+            }
+          />
+          <Route
+            path="/process"
+            element={
+              <Layout>
+                <Process />
+              </Layout>
+            }
+          />
+          <Route
+            path="/pricing"
+            element={
+              <Layout>
+                <Pricing />
+              </Layout>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <Layout>
+                <About />
+              </Layout>
+            }
+          />
+          <Route
+            path="/blog"
+            element={
+              <Layout>
+                <Blog />
+              </Layout>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Layout>
+                <Contact />
+              </Layout>
+            }
+          />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route
+            path="*"
+            element={
+              <Layout>
+                <NotFound />
+              </Layout>
+            }
+          />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

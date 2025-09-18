@@ -22,7 +22,11 @@ const navigation = [
   { name: "Contact", href: "/contact" },
 ];
 
-export const Navbar = () => {
+type NavbarProps = {
+  isHome?: boolean;
+};
+
+export const Navbar = ({ isHome = false }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -215,7 +219,7 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+        (scrolled || !isHome)
           ? "bg-primary/95 backdrop-blur-md shadow-medium"
           : "bg-transparent"
       }`}
