@@ -338,10 +338,10 @@ const WebDevelopment = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
               Technologies We Use
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-black/80 max-w-3xl mx-auto">
               Modern, proven technologies that ensure your application is built
               for the future.
             </p>
@@ -356,12 +356,12 @@ const WebDevelopment = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="glass-card rounded-xl p-6 text-center group"
+                className="glass-card bg-card/30 rounded-xl p-6 text-center group"
               >
-                <h3 className="font-semibold text-white mb-2 group-hover:text-accent transition-colors duration-200">
+                <h3 className="font-semibold text-black mb-2 group-hover:text-accent transition-colors duration-200">
                   {tech.name}
                 </h3>
-                <p className="text-sm text-white/70">{tech.description}</p>
+                <p className="text-sm text-black/70">{tech.description}</p>
               </motion.div>
             ))}
           </div>
