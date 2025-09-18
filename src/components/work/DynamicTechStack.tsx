@@ -18,6 +18,36 @@ const techs: { key: string; title: string; desc: string }[] = [
     desc: "Angular is a full-featured framework backed by Google. It shines in large-scale, enterprise-grade projects that need structure, strong typing (with TypeScript), and robust tooling out of the box. We pick Angular when teams need maintainability, consistency, and long-term support, especially for complex business applications.",
   },
   {
+  key: "typescript",
+  title: "TypeScript",
+  desc: "TypeScript adds strong typing on top of JavaScript, making codebases more predictable, maintainable, and scalable. We use it when building large applications that demand long-term reliability, better developer productivity, and fewer runtime bugs.",
+  },
+  {
+    key: "tailwind",
+    title: "Tailwind CSS",
+    desc: "Tailwind CSS is a utility-first CSS framework that enables rapid, consistent, and responsive UI development. We use it for projects that need custom designs without the overhead of writing repetitive CSS, ensuring speed and design consistency.",
+  },
+  {
+  key: "react-native",
+  title: "React Native",
+  desc: "React Native enables us to build cross-platform mobile apps using JavaScript and React. We choose it when speed-to-market is essential, and a single codebase needs to serve both iOS and Android users without compromising performance.",
+  },
+  {
+    key: "flutter",
+    title: "Flutter",
+    desc: "Flutter, powered by Google, lets us build visually rich, natively compiled apps from one codebase. We use it when design consistency and high performance across mobile, web, and desktop platforms are key.",
+  },
+  {
+    key: "ios",
+    title: "iOS Development",
+    desc: "Native iOS development with Swift/Objective-C ensures deep integration with Apple’s ecosystem. We use it when building high-performance, platform-specific apps that require advanced features like ARKit, CoreML, or system-level APIs.",
+  },
+  {
+    key: "android",
+    title: "Android Development",
+    desc: "Native Android development with Kotlin/Java gives us full access to the Android ecosystem. We use it for apps that need maximum performance, hardware-level integration, or custom features beyond cross-platform limits.",
+  },
+  {
     key: "node",
     title: "Node.js",
     desc: "Node.js allows us to build fast, scalable backends using JavaScript on the server. Its event-driven, non-blocking I/O model is ideal for APIs, real-time applications, and microservices. We leverage Node.js when performance under heavy load is essential, like chat apps, streaming services, or high-traffic APIs.",
@@ -28,25 +58,45 @@ const techs: { key: string; title: string; desc: string }[] = [
     desc: ".NET is a mature Microsoft-backed framework perfect for enterprise environments. With strong language support (C#, F#), excellent performance, and built-in security, we use it when building large, mission-critical systems, such as financial platforms, healthcare solutions, or enterprise-grade backoffice tools.",
   },
   {
-  key: "java",
-  title: "Java",
-  desc: "Java is a battle-tested, object-oriented language widely used in enterprise environments. Its strong typing, portability, and massive ecosystem make it ideal for large-scale, mission-critical applications. We use Java for banking systems, telecom services, and platforms that demand reliability, scalability, and long-term maintainability.",
-},
-{
-  key: "aws",
-  title: "AWS",
-  desc: "Amazon Web Services (AWS) is the industry-leading cloud platform with unmatched breadth of services. From compute and storage to AI and IoT, AWS provides everything needed to scale globally. We leverage AWS for enterprise-grade projects where flexibility, compliance, and high availability are key, such as e-commerce platforms, SaaS products, and data-heavy applications.",
-},
-{
-  key: "azure",
-  title: "Azure",
-  desc: "Microsoft Azure integrates seamlessly with enterprise IT environments and Microsoft tools. Its strengths lie in hybrid cloud, compliance, and security, making it a natural choice for businesses already invested in Microsoft technologies. We choose Azure for industries like healthcare, finance, and government, where regulatory needs and deep Microsoft stack integration are critical.",
-},
-{
-  key: "heroku",
-  title: "Heroku",
-  desc: "Heroku is a developer-friendly Platform-as-a-Service (PaaS) that allows rapid deployment without server management. Its simplicity and strong ecosystem of add-ons make it perfect for startups, prototypes, and fast-moving projects. We use Heroku when speed-to-market is essential, especially for MVPs, proof-of-concepts, or applications that need to scale smoothly without heavy infrastructure overhead.",
-},
+    key: "python",
+    title: "Python",
+    desc: "Python is a versatile language with strengths in AI, data science, automation, and backend APIs. We use it when building machine learning pipelines, quick prototypes, or reliable backends for data-heavy applications.",
+  },
+  {
+    key: "sql",
+    title: "SQL",
+    desc: "SQL (Structured Query Language) is the backbone of relational databases, enabling precise data querying and manipulation. We use SQL when applications require structured data, reporting, or transactional consistency.",
+  },
+  {
+    key: "postgresql",
+    title: "PostgreSQL",
+    desc: "PostgreSQL is a powerful, open-source relational database known for reliability and advanced features. We choose it when applications need complex queries, strong ACID compliance, or scalability for enterprise workloads.",
+  },
+  {
+    key: "mongodb",
+    title: "MongoDB",
+    desc: "MongoDB is a NoSQL database designed for flexibility and scale, storing data in JSON-like documents. We use it when projects require fast iteration, schema flexibility, or handling unstructured/large-scale datasets.",
+  },
+  {
+    key: "aws",
+    title: "AWS",
+    desc: "Amazon Web Services (AWS) is the industry-leading cloud platform with unmatched breadth of services. From compute and storage to AI and IoT, AWS provides everything needed to scale globally. We leverage AWS for enterprise-grade projects where flexibility, compliance, and high availability are key, such as e-commerce platforms, SaaS products, and data-heavy applications.",
+  },
+  {
+    key: "docker",
+    title: "Docker",
+    desc: "Docker allows applications to run in isolated containers, ensuring consistency across environments. We use it for microservices, deployments, and CI/CD pipelines where reproducibility and portability are critical.",
+  },
+  {
+    key: "kubernetes",
+    title: "Kubernetes",
+    desc: "Kubernetes is the industry standard for orchestrating containerized applications at scale. We use it when projects require high availability, auto-scaling, or managing complex cloud-native architectures.",
+  },
+  {
+    key: "cicd",
+    title: "CI/CD",
+    desc: "Continuous Integration and Continuous Deployment (CI/CD) automates testing and releases. We implement CI/CD pipelines to ensure faster iterations, fewer errors, and seamless delivery of new features to production.",
+  },
 ];
 
 
@@ -76,31 +126,30 @@ const DynamicTechStack = () => {
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left list */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4">
-  <div className="flex flex-col gap-3 max-h-[320px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent">
-    {techs.map((t) => (
-      <button
-        key={t.key}
-        onClick={() => setActive(t.key)}
-        className={`relative text-left px-4 py-3 rounded-lg transition-all duration-200 w-full font-medium
-          ${
-            active === t.key
-              ? "bg-white/20 text-white border border-white/20 shadow-md"
-              : "bg-transparent text-white/80 hover:bg-white/10 border border-transparent"
-          }`}
-      >
-        {t.title}
-        {active === t.key && (
-          <motion.div
-            layoutId="activeHighlight"
-            className="absolute inset-0 rounded-lg border border-white/30"
-            transition={{ duration: 0.25 }}
-          />
-        )}
-      </button>
-    ))}
-  </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 flex flex-col gap-3 h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-rounded">
+  {techs.map((t) => (
+    <button
+      key={t.key}
+      onClick={() => setActive(t.key)}
+      className={`relative text-left px-4 py-3 rounded-lg transition-all duration-200 w-full font-medium
+        ${
+          active === t.key
+            ? "bg-white/20 text-white border border-white/20 shadow-md"
+            : "bg-transparent text-white/80 hover:bg-white/10 border border-transparent"
+        }`}
+    >
+      {t.title}
+      {active === t.key && (
+        <motion.div
+          layoutId="activeHighlight"
+          className="absolute inset-0 rounded-lg border border-white/30"
+          transition={{ duration: 0.25 }}
+        />
+      )}
+    </button>
+  ))}
 </div>
+
 
           {/* Right detail display */}
           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
