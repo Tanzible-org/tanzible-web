@@ -1,15 +1,32 @@
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Wrench, Shield, Zap, Clock } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Wrench, Shield, Zap, Clock } from "lucide-react";
 
 const handleWhatsApp = () => {
-  window.open('https://wa.me/919693759948', '_blank');
+  window.open("https://wa.me/919693759948", "_blank");
 };
 
 const Maintenance = () => {
   return (
     <div className="min-h-screen pt-20">
       <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 -z-10">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover"
+            poster="/assets/webdev-hero-poster.jpg"
+          >
+            {/* Use your file path in /public. Example below: */}
+            <source src="/assets/maintenance.mp4" type="video/mp4" />
+          </video>
+
+          {/* Readability overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-black/10" />
+        </div>
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -21,7 +38,8 @@ const Maintenance = () => {
               Maintenance & Support
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
-              Ongoing support and maintenance to keep your applications running smoothly and securely.
+              Ongoing support and maintenance to keep your applications running
+              smoothly and securely.
             </p>
             <Button
               onClick={handleWhatsApp}
